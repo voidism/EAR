@@ -14,7 +14,12 @@ To be published in [**ACL 2023**](https://2023.aclweb.org/) (findings)
 
 Pre-trained models can be downloaded here: https://drive.google.com/file/d/1ueepl7Yh2RFThH_tcuoK8rkOHaWBUsGJ/view?usp=sharing
 
-### Requirements:
+## Overview
+![overview](https://raw.githubusercontent.com/voidism/EAR/main/overview.png)
+
+We propose EAR, a query **E**xpansion **A**nd **R**eranking approach for improving passage retrieval, with the application to open-domain question answering. EAR first applies a query expansion model to generate a diverse set of queries, and then uses a query reranker to select the ones that could lead to better retrieval results. Motivated by the observation that the best query expansion often is not picked by greedy decoding, EAR trains its reranker to predict the rank orders of the gold passages when issuing the expanded queries to a given retriever. By connecting better the query expansion model and retriever, EAR significantly enhances a traditional sparse retrieval method, BM25. Empirically, EAR improves top-5/20 accuracy by 3-8 and 5-10 points in in-domain and out-of-domain settings, respectively, when compared to a vanilla query expansion model, GAR, and a dense retrieval model, DPR.
+
+## Requirements:
 
 Python 3.7.13
 
@@ -30,7 +35,7 @@ wandb
 
 The data preparation steps can be skip by downloading the dataset here:
 https://drive.google.com/file/d/1jurEgOclg8jz9cN3qpNfy1wfGThH9oKB/view?usp=sharing  
-and you can jump to step 2. directly.
+and you can jump to step 2 directly.
 
 ### Generate randomly sampled outputs from T0-3B and GAR
 
@@ -185,3 +190,17 @@ gar-from-nq-to-trec-title-test_set.json       gar-from-trivia-to-entiqa-title-te
 ```
 
 Change the paths accordingly in the evaluation step should work for these json files.
+
+# Citation
+[![DOI](https://img.shields.io/badge/DOI-10.48550/arXiv.2305.17080-green?color=FF8000?color=009922)](https://doi.org/10.48550/arXiv.2305.17080)  
+Please cite our paper if it's helpful to your work!
+```bibtex
+@misc{chuang2023expand,
+      title={Expand, Rerank, and Retrieve: Query Reranking for Open-Domain Question Answering}, 
+      author={Yung-Sung Chuang and Wei Fang and Shang-Wen Li and Wen-tau Yih and James Glass},
+      year={2023},
+      eprint={2305.17080},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
