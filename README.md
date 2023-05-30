@@ -29,7 +29,7 @@ wandb
 ## 1. Data preparation
 
 The data preparation steps can be skip by downloading the dataset here:
-https://drive.google.com/file/d/1jurEgOclg8jz9cN3qpNfy1wfGThH9oKB/view?usp=sharing
+https://drive.google.com/file/d/1jurEgOclg8jz9cN3qpNfy1wfGThH9oKB/view?usp=sharing  
 and you can jump to step 2. directly.
 
 ### Generate randomly sampled outputs from T0-3B and GAR
@@ -38,7 +38,7 @@ Need to prepare text files which contain queries randomly sampled from T0/GAR:
 1. T0-3B decoded random sampled outputs for the train set of NQ/TriviaQA.
 2. GAR decoded random sampled outputs for the dev/test set of NQ/TriviaQA with a. answer b. sentence c. title generators
 
-For T0-3B: Just use this script: `generation_t0-3b.py`
+For T0-3B: Just use this script: `generation_t0-3b.py`. 
 For GAR, please refer to their repo: https://github.com/morningmoni/GAR
 
 
@@ -81,8 +81,8 @@ gar-answer-nq-dev/nq-dev-3.csv
 gar-answer-nq-dev/nq-dev-4.csv
 ...
 ```
-Here we use pyserini to run BM25 for all the queries.
-Here we use the code from https://github.com/oriram/spider#sparse-retrieval
+Here we use pyserini to run BM25 for all the queries.  
+We use the code from https://github.com/oriram/spider#sparse-retrieval
 
 The JAVA paths should be changed in `bm25.sh` if you have a different JAVA path.
 
@@ -115,8 +115,8 @@ output_bm25_gar-title-nq-test
 ```
 python convert_json_dataset.py gar_answer_dev_set.json output_bm25_gar-answer-nq-dev/nq-dev-%d/results.json <thread> <n_examples>
 ```
-set `n_examples` = 3610 for NQ-test / 11313 for TriviaQA-test
-set `thread` depends on how many cpu cores you have
+set `n_examples` = 3610 for NQ-test / 11313 for TriviaQA-test  
+set `thread` depends on how many cpu cores you have  
 
 After all the above steps, you should finally get the following files:
 
