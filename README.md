@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 [![Arxiv](https://img.shields.io/badge/arXiv-2305.17080-B21A1B)](https://arxiv.org/abs/2305.17080)
 
-arXiv link: https://arxiv.org/abs/2305.17080
+arXiv link: https://arxiv.org/abs/2305.17080  
 Authors: 
 [Yung-Sung Chuang](https://people.csail.mit.edu/yungsung/),
 [Wei Fang](http://people.csail.mit.edu/weifang/),
